@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_fragment.xml"
+    app:startDestination="@id/mainscreen"
+ >
+
+    <fragment
+        android:id="@+id/mainscreen"
+        android:name="com.example.safebox.fragment.Mainscreen"
+        android:label="fragment_mainscreen"
+        tools:layout="@layout/fragment_mainscreen" >
+        <action
+            android:id="@+id/action_mainscreen_to_secondScreenFragment"
+            app:destination="@id/secondScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondScreenFragment"
+        android:name="com.example.safebox.fragment.SecondScreenFragment"
+        android:label="fragment_second_screen"
+        tools:layout="@layout/fragment_second_screen" >
+        <action
+            android:id="@+id/action_secondScreenFragment_to_mainscreen"
+            app:destination="@id/mainscreen" />
+        <action
+            android:id="@+id/action_secondScreenFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_secondScreenFragment_to_mainscreen2"
+            app:destination="@id/mainscreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.safebox.fragment.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.safebox.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+</navigation>
