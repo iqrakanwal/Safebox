@@ -1,10 +1,8 @@
 package com.example.safebox.fragment
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +23,7 @@ class ListFragment : Fragment(), onclickListener {
     lateinit var layout: LinearLayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
 
     }
 
@@ -57,9 +56,7 @@ class ListFragment : Fragment(), onclickListener {
     override fun onClick(name: String, status: String) {
         mainViewModel.name = name
         mainViewModel.status = status
-
-
-        findNavController().navigate(R.id.action_secondScreenFragment_to_listFragment)
+        findNavController().navigate(R.id.action_listFragment_to_secondScreenFragment)
     }
 
 
@@ -68,5 +65,30 @@ class ListFragment : Fragment(), onclickListener {
 
     override fun onEdti() {
     }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.options_for_list, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.mainscree2 -> {
+                findNavController().navigate(R.id.action_listFragment_to_secondScreenFragment)
+                true
+            }
+            R.id.signout -> {
+                true
+            }   R.id.connect -> {
+                findNavController().navigate(R.id.action_listFragment_to_connectScreenFragment)
+
+                true
+            }   R.id.mainscreenn1 -> {
+                findNavController().navigate(R.id.action_listFragment_to_mainscreen)
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }

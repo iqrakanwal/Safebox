@@ -4,53 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/red"
+
     tools:context=".fragment.SecondScreenFragment">
 
     <TextView
         android:id="@+id/name_of_safe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dkfkdsfjsd"
-        android:textSize="@dimen/_15sdp"
-        android:textColor="@color/black"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Safe name"
+        android:textSize="@dimen/_20sdp"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_40sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/locked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:src="@drawable/locked"
+        android:id="@+id/appCompatImageView"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:src="@drawable/red"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_30sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_of_safe" />
-
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:text="this safebox is not connected"
-        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:text="Safe is locked until..."
+        android:textColor="@color/white"
         android:id="@+id/status"
+        android:fontFamily="@font/poppins"
+
+        android:textSize="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locked" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
 
 
-    <Button
-        android:id="@+id/connect"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/_50sdp"
-        android:layout_height="wrap_content"
-        android:text="connect"
-        app:layout_constraintEnd_toEndOf="@+id/status"
-        app:layout_constraintStart_toStartOf="@+id/status"
+    <ProgressBar
+        android:id="@+id/progressBarCircle"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+
+        android:layout_centerInParent="true"
+        android:background="@drawable/drawable_circle_dark_blue"
+        android:indeterminate="false"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/drawable_circle_yellow"
+        android:rotation="-90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/status" />
+
+    <EditText
+        android:id="@+id/editTextMinute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewTime"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:hint="@string/hint_minute"
+        android:inputType="number"
+        android:visibility="gone"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:minEms="5"
+        android:text="1"
+        android:textColor="@color/colorYellow"
+        android:textColorHint="@color/colorYellow"
+        app:layout_constraintStart_toEndOf="@+id/imageViewStartStop" />
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="00:01:00"
+        android:textColor="@color/colorYellow"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBarCircle"
+        app:layout_constraintEnd_toEndOf="@+id/progressBarCircle"
+        app:layout_constraintStart_toStartOf="@+id/progressBarCircle"
+        app:layout_constraintTop_toTopOf="@+id/progressBarCircle" />
+
+    <ImageView
+        android:id="@+id/imageViewReset"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textViewTime"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/location"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageViewStartStop"
+        android:layout_width="50dp"
+        android:src="@drawable/location"
+android:visibility="gone"
+        android:layout_height="50dp"
+        android:layout_below="@+id/progressBarCircle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+  />
+
+
+
 
 
 

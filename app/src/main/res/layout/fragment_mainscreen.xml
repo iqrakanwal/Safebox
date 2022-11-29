@@ -3,17 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bggg"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".fragment.Mainscreen">
 
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@+id/appCompatImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
         android:layout_marginTop="@dimen/_45sdp"
-        android:src="@drawable/lock"
+        android:src="@drawable/green"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompatagain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,144 +39,39 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_5sdp"
         android:layout_marginEnd="@dimen/_5sdp"
-        android:weightSum="2"
+        android:weightSum="3"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompatagain">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_100sdp"
-            app:cardCornerRadius="@dimen/_10sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/_10sdp"
 
-
-            android:layout_gravity="center"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            app:cardCornerRadius="@dimen/_10sdp">
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="@drawable/circletwo"
-                android:padding="@dimen/_7sdp">
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:src="@drawable/smartphone" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SmartPhone"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_11sdp"
-                    android:textStyle="bold" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/_10sdp"
-            app:cardCornerRadius="@dimen/_10sdp"
-
-            android:layout_weight="1">
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:background="@drawable/circlepink"
-                android:orientation="vertical"
-                android:padding="@dimen/_7sdp">
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:src="@drawable/timer" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Timer"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompatagain"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:weightSum="2"
-        android:layout_marginTop="@dimen/_30sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView">
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/_10sdp"
-
-            app:cardCornerRadius="@dimen/_10sdp"
-            android:layout_weight="1">
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
-                android:layout_gravity="center"
+                android:padding="@dimen/_7sdp"
                 android:background="@drawable/cirlce"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="@dimen/_7sdp">
+               >
 
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/_45sdp"
-                    android:layout_height="@dimen/_45sdp"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
                     android:src="@drawable/lock" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lock"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold" />
-
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -172,21 +80,23 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_gravity="center"
-app:cardCornerRadius="@dimen/_10sdp"
-            android:layout_margin="@dimen/_5sdp"
-            android:layout_weight="1">
+            android:layout_margin="@dimen/_10sdp"
+
+            android:layout_weight="1"
+            app:cardCornerRadius="@dimen/_10sdp">
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:background="@drawable/circlegreen"
                 android:orientation="vertical"
-                android:padding="@dimen/_4sdp">
+                android:padding="@dimen/_7sdp"
+                android:background="@drawable/circlegreen"
+               >
 
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -195,24 +105,44 @@ app:cardCornerRadius="@dimen/_10sdp"
                     android:src="@drawable/calender" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="Calender"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold" />
-
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10sdp"
 
+
+            android:layout_weight="1"
+            app:cardCornerRadius="@dimen/_10sdp">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_7sdp"
+                android:background="@drawable/circlegreen"
+           >
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/smartphone" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
     </androidx.appcompat.widget.LinearLayoutCompat>
-    
-    
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -222,34 +152,65 @@ app:cardCornerRadius="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_5sdp"
         android:layout_marginEnd="@dimen/_5sdp"
         android:layout_marginBottom="@dimen/_30sdp"
-        android:weightSum="2"
+        android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"
 
+            app:cardCornerRadius="@dimen/_10sdp">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_7sdp"
+                android:background="@drawable/circlegreen"
+               >
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/timer" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
 
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_gravity="center"
             android:layout_margin="@dimen/_10sdp"
 
-            app:cardCornerRadius="@dimen/_10sdp"
+            android:layout_weight="1"
 
-            android:layout_weight="1">
+            app:cardCornerRadius="@dimen/_10sdp">
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:background="@drawable/circlepurple"
                 android:orientation="vertical"
-                android:padding="@dimen/_7sdp">
+                android:padding="@dimen/_7sdp"
+                android:background="@drawable/circlegreen"
+           >
 
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -258,15 +219,6 @@ app:cardCornerRadius="@dimen/_10sdp"
                     android:src="@drawable/location" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_6sdp"
-                    android:text="Location"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold" />
-
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -274,22 +226,23 @@ app:cardCornerRadius="@dimen/_10sdp"
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_gravity="center"
-            app:cardCornerRadius="@dimen/_10sdp"
-
             android:layout_margin="@dimen/_10sdp"
-            android:layout_weight="1">
+
+            android:layout_weight="1"
+            app:cardCornerRadius="@dimen/_10sdp">
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:background="@drawable/circleblue"
                 android:orientation="vertical"
-                android:padding="@dimen/_7sdp">
+                android:padding="@dimen/_7sdp"
+                android:background="@drawable/circlegreen"
+             >
 
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -297,14 +250,6 @@ app:cardCornerRadius="@dimen/_10sdp"
                     android:layout_height="@dimen/_35sdp"
                     android:src="@drawable/running" />
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="running"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -5,9 +5,9 @@
         android:id="@+id/signout"
         android:title="Sign Out" />
 
-  <item
-      android:id="@+id/connect"
-      android:title="Connect" />
+    <item
+        android:id="@+id/screen2"
+        android:title="Main screen 2" />
 
 
     <item

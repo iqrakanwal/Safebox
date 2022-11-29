@@ -14,6 +14,15 @@
         <action
             android:id="@+id/action_mainscreen_to_secondScreenFragment"
             app:destination="@id/secondScreenFragment" />
+        <action
+            android:id="@+id/action_mainscreen_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_mainscreen_to_secondScreenFragment2"
+            app:destination="@id/secondScreenFragment" />
+        <action
+            android:id="@+id/action_mainscreen_to_connectScreenFragment"
+            app:destination="@id/connectScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondScreenFragment"
@@ -29,15 +38,52 @@
         <action
             android:id="@+id/action_secondScreenFragment_to_mainscreen2"
             app:destination="@id/mainscreen" />
+        <action
+            android:id="@+id/action_secondScreenFragment_to_listFragment2"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_secondScreenFragment_to_listFragment3"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_secondScreenFragment_to_listFragment4"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_secondScreenFragment_to_connectScreenFragment"
+            app:destination="@id/connectScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.safebox.fragment.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_secondScreenFragment"
+            app:destination="@id/secondScreenFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_mainscreen"
+            app:destination="@id/mainscreen" />
+        <action
+            android:id="@+id/action_listFragment_to_connectScreenFragment"
+            app:destination="@id/connectScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.safebox.fragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/connectScreenFragment"
+        android:name="com.example.safebox.fragment.ConnectScreenFragment"
+        android:label="fragment_connect_screen"
+        tools:layout="@layout/fragment_connect_screen" >
+        <action
+            android:id="@+id/action_connectScreenFragment_to_mainscreen"
+            app:destination="@id/mainscreen" />
+        <action
+            android:id="@+id/action_connectScreenFragment_to_secondScreenFragment"
+            app:destination="@id/secondScreenFragment" />
+        <action
+            android:id="@+id/action_connectScreenFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
 </navigation>

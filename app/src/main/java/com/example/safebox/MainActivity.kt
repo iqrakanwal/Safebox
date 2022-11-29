@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.safebox.SharedPreferencesUtils.getMenuVisibility
+import com.example.safebox.SharedPreferencesUtils.setMenuVisibility
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        toolbar.title=""
         setSupportActionBar(toolbar)
 
         val navHostFragment =
@@ -29,7 +31,9 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.secondScreenFragment -> {
                     // showToolbar()
-
+                    toolbar.title="Main Screen 2"
+                    invalidateOptionsMenu()
+                    //setToolbarIcon()
                 }
                 R.id.listFragment -> {
 
@@ -37,6 +41,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.mainscreen -> {
                     // hideToolbar()
+                    toolbar.title="Main Screen 1"
+
+                    invalidateOptionsMenu()
 
                 }
             }
@@ -44,15 +51,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.options_menu, menu)
 
-
-
-
         return true
-    }
+    }*/
 
 
     /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -71,36 +75,22 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {
-            R.id.signout -> {
+         /*   R.id.mainscree1 -> {
 
-                //   Toast.makeText(this, "fgdfg", Toast.LENGTH_SHORT).show()
-                //item.onNavDestinationSelected(navController)
-                true
-            }
-            R.id.manageafes -> {
-                Log.e("fjkgjfg", "dsflksdfj")
 
-                //navController.navigate(R.id.action_secondScreenFragment_to_listFragment)
-                true
-            }
-            R.id.mainone -> {
-                navController.navigate(R.id.action_mainscreen_to_secondScreenFragment)
+                Log.e("fhkdsf", "${navController.currentDestination?.displayName}")
+                if (navController.currentDestination?.displayName == "com.example.safebox:id/mainscreen") {
+                    Toast.makeText(this, "kdfjdfj", Toast.LENGTH_LONG).show()
 
-                //   Toast.makeText(this, "fgdfg", Toast.LENGTH_SHORT).show()
-                //item.onNavDestinationSelected(navController)
-                true
-            }
-            R.id.mainscree2 -> {
-                Log.e("fjkgjfg", "${navController.currentDestination?.displayName}")
-               /* if (navController.currentDestination?.displayName=="id/secondScreenFragment"){
+                } else {
                     navController.navigate(R.id.action_secondScreenFragment_to_mainscreen)
+                }
 
-                }else{
-                    navController.navigate(R.id.action_mainscreen_to_secondScreenFragment)
-
-                }*/
                 true
-            }
+            }*/
+
+
+
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -122,9 +112,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        menu.getItem(0).isVisible = getMenuVisibility(this)
-        menu.getItem(1).isVisible = getMenuVisibility(this)
+     //   menu.getItem(0).isVisible = getMenuVisibility(this)
         return super.onPrepareOptionsMenu(menu)
 
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

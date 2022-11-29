@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 class MainViewModel:ViewModel() {
 
 
-    var name:String=""
-    var status:String=""
+    var name:String="safe name"
+    var status:String="Safe name is lockec until.."
 
     fun setname(name1:String){
         name=name1

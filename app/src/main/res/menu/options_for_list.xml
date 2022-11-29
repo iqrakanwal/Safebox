@@ -13,8 +13,8 @@
 
 
     <item
-        android:id="@+id/managelist"
-        android:title="Manage Safe" />
+        android:id="@+id/mainscreenn1"
+        android:title="Main Screen 1" />
     <item
         android:id="@+id/mainscree2"
         android:title="Main screen 2" />
