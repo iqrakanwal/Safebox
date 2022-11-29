@@ -13,4 +13,18 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="RoundedButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="backgroundTint">@color/green</item>
+        <item name="rippleColor">@color/green</item>
+        <item name="shapeAppearance">@style/CustomShapeAppearance</item>
+
+    </style>
+
+    <style name="CustomShapeAppearance">
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomLeft">20dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+    </style>
 </resources>

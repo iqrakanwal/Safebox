@@ -1,17 +1,18 @@
 package com.example.safebox
 
+import android.graphics.Color
+import android.graphics.Color.green
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.safebox.SharedPreferencesUtils.getMenuVisibility
-import com.example.safebox.SharedPreferencesUtils.setMenuVisibility
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         toolbar.title=""
+
         setSupportActionBar(toolbar)
 
         val navHostFragment =
@@ -32,19 +34,48 @@ class MainActivity : AppCompatActivity() {
                 R.id.secondScreenFragment -> {
                     // showToolbar()
                     toolbar.title="Main Screen 2"
+                    toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
                     invalidateOptionsMenu()
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        val window = window
+                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
+                    }
                     //setToolbarIcon()
                 }
                 R.id.listFragment -> {
+                    toolbar.title="Manage Safes"
+                    toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
+                    invalidateOptionsMenu()
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        val window = window
+                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
+                    }
 
+                }
+                R.id.connectScreenFragment -> {
+                    toolbar.title="Connect"
+                    toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
+                    invalidateOptionsMenu()
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        val window = window
+                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
+                    }
 
                 }
                 R.id.mainscreen -> {
                     // hideToolbar()
                     toolbar.title="Main Screen 1"
+                    toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
 
                     invalidateOptionsMenu()
-
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        val window = window
+                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                        window.statusBarColor = ContextCompat.getColor(this, R.color.red)
+                    }
                 }
             }
         }

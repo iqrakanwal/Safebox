@@ -5,6 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.safebox.ListAdaptor
 import com.example.safebox.MainViewModel
@@ -45,9 +46,17 @@ class ListFragment : Fragment(), onclickListener {
         arrayList.add(Safebox("abc", "connected"))
         arrayList.add(Safebox("abc", "connected"))
         arrayList.add(Safebox("abc", "connected"))
+
+
+
         layout = LinearLayoutManager(requireContext())
         listAdaptor = ListAdaptor(requireContext(), arrayList, this)
         list.layoutManager = layout
+        val dividerItemDecoration = DividerItemDecoration(
+            list.getContext(),
+            layout.getOrientation()
+        )
+        list.addItemDecoration(dividerItemDecoration)
         list.adapter = listAdaptor
 
 

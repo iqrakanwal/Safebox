@@ -35,6 +35,10 @@ android {
 }
 
 dependencies {
+
+
+
+    implementation project(path: ':easycountdowntimer')
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'androidx.core:core-ktx:1.7.0'
     // Koin Dependency Injection

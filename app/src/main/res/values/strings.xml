@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_minute">minut</string>
     <string name="message_minutes">Please Enter Minutes</string>
+    <string name="connect_to_safe">Connect to Safe</string>
+    <string name="find_wifi">Find Wifi</string>
 </resources>

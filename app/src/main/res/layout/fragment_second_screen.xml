@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
+    android:background="@drawable/greenbg"
 
     tools:context=".fragment.SecondScreenFragment">
 
@@ -12,10 +12,10 @@
         android:id="@+id/name_of_safe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Safe name"
-        android:textSize="@dimen/_20sdp"
-        android:textColor="@color/white"
         android:layout_marginTop="@dimen/_40sdp"
+        android:text="Safe name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,20 +25,20 @@
         android:id="@+id/appCompatImageView"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:src="@drawable/red"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_30sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_of_safe" />
 
     <TextView
+        android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_25sdp"
+        android:fontFamily="@font/poppins"
         android:text="Safe is locked until..."
         android:textColor="@color/white"
-        android:id="@+id/status"
-        android:fontFamily="@font/poppins"
 
         android:textSize="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,75 +46,149 @@
         app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
 
 
-    <ProgressBar
-        android:id="@+id/progressBarCircle"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
 
-        android:layout_centerInParent="true"
-        android:background="@drawable/drawable_circle_dark_blue"
-        android:indeterminate="false"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:max="100"
-        android:progress="100"
-        android:progressDrawable="@drawable/drawable_circle_yellow"
-        android:rotation="-90"
+<!--    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/timerlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status" />
+        app:layout_constraintTop_toBottomOf="@+id/status">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/days"
+    android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hourss"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mint"
+            android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/editTextMinute"
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/se"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+android:background="@drawable/grey_drawable"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textViewTime"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:hint="@string/hint_minute"
-        android:inputType="number"
-        android:visibility="gone"
-        android:maxLength="15"
-        android:maxLines="1"
-        android:minEms="5"
-        android:text="1"
-        android:textColor="@color/colorYellow"
-        android:textColorHint="@color/colorYellow"
-        app:layout_constraintStart_toEndOf="@+id/imageViewStartStop" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status">
 
-    <TextView
-        android:id="@+id/textViewTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="00:01:00"
-        android:textColor="@color/colorYellow"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBarCircle"
-        app:layout_constraintEnd_toEndOf="@+id/progressBarCircle"
-        app:layout_constraintStart_toStartOf="@+id/progressBarCircle"
-        app:layout_constraintTop_toTopOf="@+id/progressBarCircle" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/grey_drawable"
+            android:orientation="horizontal"
+android:layout_marginTop="@dimen/_5sdp"
 
-    <ImageView
-        android:id="@+id/imageViewReset"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/textViewTime"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/location"
-        android:visibility="gone" />
+            android:weightSum="4"
+            app:layout_constraintBottom_toTopOf="@+id/easyCountDownTextview"
+            app:layout_constraintEnd_toEndOf="@+id/easyCountDownTextview"
+            app:layout_constraintStart_toStartOf="@+id/easyCountDownTextview"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageViewStartStop"
-        android:layout_width="50dp"
-        android:src="@drawable/location"
-android:visibility="gone"
-        android:layout_height="50dp"
-        android:layout_below="@+id/progressBarCircle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-  />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_35sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+
+                android:gravity="center"
+                android:text="Days"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:gravity="center"
+
+                android:text="hours"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Mints"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:gravity="center"
+
+                android:text="Sec"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+
+        <ir.samanjafari.easycountdowntimer.EasyCountDownTextview
+            android:id="@+id/easyCountDownTextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:colonColor="#000"
+            android:background="@drawable/grey_drawable"
+
+            app:days="0"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:daysLabel=""
+            app:digitBackground="@android:color/transparent"
+            app:hours="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status"
+            app:minute="1"
+            app:second="8"
+            app:setAnimation="true"
+            app:showDays="true"
+            app:showHours="true"
+            app:showOnlySecond="false"
+            app:start_automatically="false"
+            app:textColor="#9c9c9c"
+            app:textSize="@dimen/_25sdp"
+            app:useFarsiNumeral="false" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 

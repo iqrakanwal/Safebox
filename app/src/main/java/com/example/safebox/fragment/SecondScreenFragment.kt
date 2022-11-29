@@ -6,20 +6,22 @@ import android.os.CountDownTimer
 import android.view.*
 import android.view.View.OnClickListener
 import android.widget.*
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import com.example.safebox.MainViewModel
 import com.example.safebox.R
+import ir.samanjafari.easycountdowntimer.EasyCountDownTextview
 import kotlinx.android.synthetic.main.fragment_second_screen.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 
 class SecondScreenFragment : Fragment(), OnClickListener {
     private val mainViewModel: MainViewModel by sharedViewModel()
-    private var timeCountInMilliSeconds = (1 * 60000).toLong()
+/*    private var timeCountInMilliSeconds = (1 * 60000).toLong()
 
     private var timerStatus = TimerStatus.STOPPED
 
@@ -27,8 +29,11 @@ class SecondScreenFragment : Fragment(), OnClickListener {
     private var editTextMinute: EditText? = null
     private var textViewTime: TextView? = null
     private var imageViewReset: ImageView? = null
-    private var imageViewStartStop: ImageView? = null
+    private var imageViewStartStop: ImageView? = null*/
+    private var easyCountDownTextview: EasyCountDownTextview? = null
+/*
     private var countDownTimer: CountDownTimer? = null
+*/
     private enum class TimerStatus {
         STARTED, STOPPED
     }
@@ -52,13 +57,19 @@ class SecondScreenFragment : Fragment(), OnClickListener {
         status.text = mainViewModel.status
         // method call to initialize the views
        // initViews();
-        progressBarCircle = view.findViewById(R.id.progressBarCircle) as ProgressBar
+/*        progressBarCircle = view.findViewById(R.id.progressBarCircle) as ProgressBar
         editTextMinute = view.findViewById(R.id.editTextMinute) as EditText
         textViewTime = view.findViewById(R.id.textViewTime) as TextView
         imageViewReset = view.findViewById(R.id.imageViewReset) as ImageView
-        imageViewStartStop = view.findViewById(R.id.imageViewStartStop) as ImageView
+        imageViewStartStop = view.findViewById(R.id.imageViewStartStop) as ImageView*/
+
+
+        easyCountDownTextview = view.findViewById<EasyCountDownTextview>(R.id.easyCountDownTextview)
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.DAY_OF_MONTH, 12)
+        easyCountDownTextview?.startTimer(calendar)
         // method call to initialize the listeners
-        initListeners();
+   //     initListeners();
 
 
     }
@@ -70,10 +81,10 @@ class SecondScreenFragment : Fragment(), OnClickListener {
     /**
      * method to initialize the click listeners
      */
-    private fun initListeners() {
+/*    private fun initListeners() {
         imageViewReset!!.setOnClickListener(this)
         imageViewStartStop!!.setOnClickListener(this)
-    }
+    }*/
 
     /**
      * implemented method to listen clicks
@@ -82,8 +93,8 @@ class SecondScreenFragment : Fragment(), OnClickListener {
      */
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.imageViewReset -> reset()
-            R.id.imageViewStartStop -> startStop()
+           // R.id.imageViewReset -> reset()
+           // R.id.imageViewStartStop -> startStop()
         }
     }
 
@@ -91,14 +102,17 @@ class SecondScreenFragment : Fragment(), OnClickListener {
      * method to reset count down timer
      */
     private fun reset() {
-        stopCountDownTimer()
-        startCountDownTimer()
+       // stopCountDownTimer()
+        //startCountDownTimer()
     }
 
 
-    /**
+/*
+    */
+/**
      * method to start and stop count down timer
-     */
+     *//*
+
     private fun startStop() {
         if (timerStatus === TimerStatus.STOPPED) {
 
@@ -130,9 +144,11 @@ class SecondScreenFragment : Fragment(), OnClickListener {
         }
     }
 
-    /**
+    */
+/**
      * method to initialize the values for count down timer
-     */
+     *//*
+
     private fun setTimerValues() {
         var time = 0
         if (!editTextMinute!!.text.toString().isEmpty()) {
@@ -147,12 +163,21 @@ class SecondScreenFragment : Fragment(), OnClickListener {
             ).show()
         }
         // assigning values after converting to milliseconds
-        timeCountInMilliSeconds = (time * 60 * 1000).toLong()
+
+
+        if((time%24)==0){
+            timeCountInMilliSeconds = (time * 60 * 1000).toLong()
+
+
+        }
+
     }
 
-    /**
+    */
+/**
      * method to start count down timer
-     */
+     *//*
+
     private fun startCountDownTimer() {
         countDownTimer = object : CountDownTimer(timeCountInMilliSeconds, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -177,20 +202,25 @@ class SecondScreenFragment : Fragment(), OnClickListener {
         countDownTimer?.start()
     }
 
-    /**
+    */
+/**
      * method to stop count down timer
-     */
+     *//*
+
     private fun stopCountDownTimer() {
         countDownTimer!!.cancel()
     }
 
-    /**
+    */
+/**
      * method to set circular progress bar values
-     */
+     *//*
+
     private fun setProgressBarValues() {
         progressBarCircle!!.max = timeCountInMilliSeconds.toInt() / 1000
         progressBarCircle!!.progress = timeCountInMilliSeconds.toInt() / 1000
     }
+*/
 
 
     /**
